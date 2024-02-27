@@ -1,8 +1,25 @@
 import "./App.css";
 import MainPageComponent from "./main";
+import { Switch, Route } from "react-router-dom";
+import ProductPageComponent from "./product";
+import UploadPageComponent from "./upload";
 
 function App() {
-  return <MainPageComponent />;
+  return (
+    <div>
+      <Switch>
+        <Route exact={true} path="/">
+          <MainPageComponent />
+        </Route>
+        <Route exact={true} path="/product/:id">
+          <ProductPageComponent />
+        </Route>
+        <Route exact={true} path="/upload">
+          <UploadPageComponent />
+        </Route>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
